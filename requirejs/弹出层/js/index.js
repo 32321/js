@@ -7,8 +7,16 @@ require.config({
         }
     })
 
-require(["dialog","jquery"],function (dialog) {
+require(["dialog","jquery"],function (dialog,$) {
+    var $content={
+        width:"500px",
+        height:"200px",
+        content:"input.html"
+    }
     $("#btn").click(function () {
         dialog.open();
+    })
+    $("#btn1").click(function () {
+        dialog.open($content);
     })
 })
