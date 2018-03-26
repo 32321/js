@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let&&const</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>列表 001</li>
+        <li>列表 002</li>
+        <li>列表 003</li>
+        <li>列表 004</li>
+        <li>列表 005</li>
+    </ul>
+<script>
+//    var a=5;
+//    function foo() {
+//        console.log(a);
+//        var a=7;    //变量提升
+//    }
+//    foo();
+
+     console.log(a);  // function a() { console.log(a);  }   优先级
+     var a=5;
+     function a() {
+         console.log(a);
+     }
+     a=6;
+     console.log(a);//6
+     a();  // error: not a function
+
+
+//     for(var i=0;i<5;i++){
+//         console.log(i);
+//      }
+//     console.log(i);//5
+
+//        (function foo(a) {
+//           console.log(a);  // 5   立即执行函数
+//        })(5)
+
+//          for(var i=0;i<5;i++){
+//              (function foo(i) {
+//                  console.log(i);  // 0 1 2 3 4
+//              })(i)
+//          }
+
+//         var arr=[];
+//         for(var i=0;i<5;i++){
+//             arr[i]=function () {
+//                 console.log(i);
+//             }
+//         }                  // 函数只有调用时才会执行  当调用的时候i已经变成5
+//         arr[3]();//5 不管索引是啥，结果都是5
+
+        //想要输出被点击li的索引
+//       var oUl=document.getElementById("ul1");
+//        var aLi=oUl.querySelectorAll("li");
+//        for(var i=0;i<aLi.length;i++){
+//            aLi[i].onclick=function () {
+//                console.log(i);  // 结果全部都是输出5   为什么  ?
+//            }                     //  只有被点击时函数才会执行，
+//        }                       //  但此时循环已经结束了  i是5
+//                                //  函数只有被调用时才会执行
+
+        // 1.  输出被点击li的索引
+//        var oUl=document.getElementById("ul1");
+//        var aLi=oUl.getElementsByTagName("li");
+//        for(var i=0;i<aLi.length;i++){
+//            aLi[i].index=i;
+//            aLi[i].onclick=function () {
+//                console.log(this.index);
+//            }
+//        }
+
+        // 2.输出被点击li的索引
+//        var oUl=document.getElementById("ul1");
+//        var aLi=oUl.getElementsByTagName("li");
+//        for(var i=0;i<aLi.length;i++){
+//            (function (ins) {
+//                aLi[ins].onclick=function () {
+//                    console.log(ins);
+//                }
+//            })(i)
+//        }
+
+          // 3.输出被点击li的索引
+//        var oUl=document.getElementById("ul1");
+//        var aLi=oUl.getElementsByTagName("li");
+//        for(let i=0;i<aLi.length;i++){
+//            aLi[i].onclick=function () {
+//                console.log(i);
+//            }   //  相当于形成了闭包
+//        }
+
+//          if(true){
+//              let a=6;   // let是有块级作用域的   即在大括号里面定义的变量有效
+//          }
+//          console.log(a);//a is not defined
+
+//        let a=7;
+//        function foo() {
+//            console.log(a);
+//            let a=8;
+//        }
+//        foo();//报错
+
+//            let a=8;
+//            let a=9;
+//            console.log(a);//不能重复定义
+
+            /* let：暂时性死去  不存在变量提升 不能重复声明  有块级作用域  */
+
+//            const a=8;
+//            a=9;
+//            console.log(a);//出错  不能修改敞亮的值
+
+//            if(true){
+//                const s=0;
+//            }
+//            console.log(s);// error:没被定义   也是有块级作用域的
+
+//                const obj={
+//                    name:'asd',
+//                    age:18
+//                }
+//                obj.name=20;
+//                console.log(obj);//{name: 20, age: 18}
+//                //这是因为 const规定的是不能改变内存地址
+//                obj={
+//                    name:"asd"
+//                }
+//                console.log(obj); //出错   改变了内存地址
+                //  {}相当于 new ,即该改变了内存地址
+                    // 栈内存 和 堆内存   基本数据类型存储在栈中，引用存储在堆中。
+                    // 基本: number string boolean undefined null  引用:object
+
+//        const arr=[2,5];
+//        arr[2]=4;
+//        console.log(arr);
+//        arr=[5,6,7];
+//        console.log(arr);//出错，改变了内存地址
+
+//            const obj={
+//                name:"ixaoming"
+//            }
+//            obj.name="xiaohong";
+//            Object.freeze(obj); //冻结对象，不会改变里面的值
+//            console.log(obj);//{name: "xiaohong"}
+//            obj.name="xiaolei";
+//            console.log(obj);//{name: "xiaohong"}
+</script>
+</body>
+</html>

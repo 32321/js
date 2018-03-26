@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+    <script>
+//        let arr=[3,6,9];
+//        let a=arr[0];
+//        let b=arr[1];
+//        let c=arr[2];
+//        console.log(a,b,c);//3,6,9
+
+//        let [a,b,c]=[2,4,6];  //对数组进行解构赋值   根据数组的索引
+//        console.log(a,b,c); //2 4 6
+
+//        let [a,b,c,[d],e]=[3,5,7,[3,5,7],9];
+//        console.log(a,b,c,d,e);
+
+//        let [a,b,c]=['a',5,8];
+//        console.log(b,c,a);
+
+//        let {a,b,c}={     //对对象进行解构赋值   根据对象的key
+//            a:"xxx",
+//            b:"mm",
+//            c:"zzz"
+//        }
+//        console.log(a,b,c); //xx mm zzz
+
+//        let [a,b,c]={
+//            name:"waliu",
+//            age:18,
+//            c:"haha"
+//        }
+//        console.log(a,b,c);//  xxx is not iterable
+
+//        let {name:a,age:b}= {  //给key值起个索引
+//            name:"zhujin",
+//            age:33
+//        }
+//        console.log(a,b);//zhujin 33
+
+//            let {name="xiaogang",age=18}={  //解构赋值时给变量默认值
+//                name:"xiaoli",
+//                age:20
+//            }
+//            console.log(name,age);//xiaoli 20
+
+//             function foo({name,age}) { // 通过解构赋值为函数参数
+//                 console.log(name+"今年"+age+"岁");//xaiowang今年26岁
+//             }
+//             let obj={
+//                 name:"xaiowang",
+//                 age:26
+//             }
+//             foo(obj);
+
+//                let [a,b,c,d,e]="zhuzhuzhu";//此时将字符串当成了数组来解构赋值
+//                console.log(a,b,c,d,e);//z h u z h
+
+//            let a=5,b=10; //交换两个变量的值
+//            [a,b]=[b,a];   //解构赋值就是拿右边的值为左边的变量进行赋值
+//            console.log(a,b)//10 5
+
+//                let a=5;b=0;  //交换两个变量的值
+//                let temp=a;
+//                a=b;
+//                b=temp;
+//                console.log(a,b);// 0 5
+
+//            function foo() {
+//                let obj={
+//                    a:14,
+//                    b:18
+//                }
+//                return obj;
+//            }
+//            let {a,b}=foo();
+//            console.log(a,b);//14 18
+
+//             let obj={
+//                 name:"xiaoci",
+//                 sco:"siming"
+//             }
+//             let json=JSON.stringify(obj);
+//             console.log(json);//{"name":"xiaoci","sco":"siming"}
+//            let {name,sco}=JSON.parse(json);
+//            console.log(name,sco);//xiaoci siming
+    </script>
+</body>
+</html>
