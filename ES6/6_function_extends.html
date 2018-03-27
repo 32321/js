@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数扩展</title>
+</head>
+<body>
+<script>
+//    function foo(a,b,...res) {
+//        console.log(res);//[9,0]
+//        return a+b;
+//    }
+//    console.log(foo(2,6,9,0));//8
+
+//        function foo(a=0,b=0) {
+//            return a+b;
+//        }
+//        console.log(foo(8));//8  b是默认值
+//
+//        function foo1([a,b,c=6]) {
+//            console.log(a+b*c);
+//        }
+//        foo1([3,5]);//33 与解构相结合
+
+//        function Person(nae="xiaoli",age=0) {
+//            this.nae=name;
+//            this.age=age;
+//            return this;
+//        }
+//        console.log(Person().nae);// xiaoli
+//        console.log(Person(undefined,33).name+" "+Person(undefined,33).age);//xiaoli 33
+
+//            function People(name,age,sco) {
+//                this.name=name;
+//                this.age=age;
+//                this.sco=sco;
+//            }
+//            let people1=new People("xiaoli",22,"nefu");  //实际创建了对象
+//            let people2=new People("xiaowang",32,"hit");
+//            console.log(people1.sco+"   "+people2.sco);//nefu   hit
+
+//          'use strict'; //严格模式
+//           a=9;
+//           console.log(a);//a is not defined
+//          function foo(a,a,b) {
+//              console.log(a,a,b);
+//          }
+//          foo(2,55,7);//Duplicate parameter name not allowed in this context
+
+//           'use strict';
+//           console.log(this);//window
+//            function foo() {
+//                console.log(this);//undefined
+//            }
+//            foo();
+//
+//            function P1() {
+//                this.name="xiaoli";
+//            }     //严格模式下构造函数必须使用new 关键字
+//            P1();//Cannot set property 'name' of undefined
+//            let p=new P1();
+//            console.log(p.name);//xiaoli
+
+//          let foo = (a) => a*a;
+//          console.log(foo(6)) //36
+
+//        let foo = (a,b=9) => {
+//            if(a!=0||b!=0){
+//                return a*a + b*b;
+//            }
+//            return 0;
+//        }
+//        console.log(foo(2,6))//40
+//        console.log(foo(3,0));//9
+//        console.log(foo(7));//130
+
+        /*
+        *  1. 箭头函数里面没有this,
+        *  当用到函数时，会一层一层的从作用链寻找，找到为止
+        *   并且this指向的是定义时的对象   不是运行时的对象
+        *   2.不能被当作构造函数，即使用new关键字
+        *   3.不能使用arguments ,只能使用扩展运算符来接受剩余参数
+        * */
+
+        /*
+        *  如果函数内部使用了扩展运算符，默认值的参数，解构赋值，函数内部就不能使用严格模式
+        * */
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<h3>Name:</h3>
+<script>
+    //Ajax原理
+    let xmlhttp;
+    if(window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
+    }else {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.open("get","getjson.json",true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange=function () {
+        if(xmlhttp.readyState==4&&xmlhttp.status==200){
+            console.log(xmlhttp.responseText);
+        }
+    }
+</script>
+</body>
+</html>

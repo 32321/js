@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象扩展</title>
+</head>
+<body>
+<script>
+//        let num=999;
+//        let obj={
+//        a1:"lili",
+//        a2:num,
+//        scoll:35
+//    }
+//    console.log(obj.a2);//999
+
+//        let name="55号";
+//        let age=90;
+//        let num="count";
+//        let obj={
+//            li:"name",
+//            zz:"youare",
+//            [num]:10
+//        }
+//        console.log(obj.count);//10
+//        let obj1={
+//            name,
+//            age,
+//            num,
+//            sco(){
+//                console.log("简洁");
+//            }
+//        }
+//        console.log(obj1);//{name: "55号", age: 90, num: "count", sco: ƒ}
+
+//        console.log(Object.is(NaN,NaN));//true
+//        console.log(NaN==NaN);//false
+
+//        let obj={
+//            name:"xaioming",
+//            age:15,
+//            xiaosco:'xi'
+//        }
+//        let obj1={
+//            dasco:"nnn",
+//            age:22,
+//            sis:{
+//                age:18,
+//            }
+//        }//对象的合并  把参数的第二个参数以及后面的对象都合并到第一个参数中
+//        let obj2={...obj,...obj1};
+//        obj1.age=90;   //深拷贝   但内层的是浅拷贝
+//        console.log(obj2);//{name: "xaioming", age: 22, xiaosco: "xi", dasco: "nnn", sis: {…}}
+
+        let obj={
+            name:"h",
+            age:2
+        }
+        console.log("name" in obj);//true  查找是根据key来寻找判断
+
+        let arr=[43,5,6];
+        console.log(2 in arr);//true   根据数组的索引来寻找判断
+</script>
+</body>
+</html>

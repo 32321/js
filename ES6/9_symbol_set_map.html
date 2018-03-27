@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>symbol map set</title>
+</head>
+<body>
+<script>
+    let obj={
+        name:"ail"
+    }
+    let name=Symbol();
+    obj[name]="fafa";
+    console.log(obj);//{name: "ail", Symbol(): "fafa"}
+    console.log(obj[name]+"  "+obj['name']);//fafa  ail
+
+    /*
+    *   set是集合  元素不可以重复   可以用于数组去重
+    *   map是键值对集合
+    *   方法 add delete clear has set get size
+    * */
+    //手动实现数组去重
+    let arr=[5,4,7,8,4,5,6,4,8,7];
+    let newArr=[];
+    function deleteHas(arr) {
+        for(let item of arr){
+            if(!newArr.includes(item)){
+                newArr.push(item);
+            }
+        }
+        return newArr;
+    }
+    console.log(deleteHas(arr));//[5, 4, 7, 8, 6]
+
+</script>
+</body>
+</html>
