@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>代理</title>
+</head>
+<body>
+<script>
+//    let p=new Proxy({
+//        name:"xiaogang"
+//    },{
+//        get(target,key,proxy){
+//            console.log("调用了get");
+//            return target[key];
+//        },
+//        set(target,key,value,receiver){
+//            console.log("调用了set")
+//            return target[key]=value;
+//        }
+//    })
+//    console.log(p.name);
+
+        let target=function () {
+            console.log("target被调用");
+        }
+        let han={
+            apply(target,ctx,args){
+                console.log("apply被调用。。。");
+                return Reflect.apply(...arguments);
+            }
+        }
+        let p=new Proxy(target,han);
+        p();
+</script>
+</body>
+</html>

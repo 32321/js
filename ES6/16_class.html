@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+    function People(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    People.prototype.self=function () {
+        console.log(`${this.name}今年${this.age}了`);
+    }
+    let p1=new People("xiaoming",18);
+    p1.self();
+
+    function Coder(name,age,company) {
+        People.call(this,name,age);
+        this.company=company;
+    }
+    Coder.prototype=new People();
+    Coder.prototype.self=function () {
+        console.log(`${this.name}今年${this.age}了，在${this.company}工作`);
+    }
+    let c1=new Coder("xiaoang",23,"头条");
+    c1.self();
+
+    class Animal{
+        constructor(name,type){
+            this.name=name;
+            this.type=type;
+        }
+        self(){
+            console.log(`这是一种${this.type}的${this.name}`);
+        }
+    }
+    let a1=new Animal("狼","犬科");
+    a1.self();
+
+    class Cat extends Animal{
+        constructor(name,type,age){
+            super(name,type);
+            this.age=age;
+        }
+    }
+    Cat.prototype.self=function () {
+        console.log(`这是一种${this.type}的${this.name},
+            ${this.age}岁了
+        `);
+    }
+    let cat=new Cat("猫","猫科",9);
+    cat.self();
+</script>
+</body>
+</html>

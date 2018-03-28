@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ajax</title>
+    <title>Ajax原理</title>
 </head>
 <body>
 <h3>Name:</h3>
+<ul id="ul1"></ul>
 <script>
     //Ajax原理
     let xmlhttp;
+    let oUl=document.querySelector("#ul1");
+    let oH3=document.querySelector("h3");
     if(window.XMLHttpRequest){
         xmlhttp=new XMLHttpRequest();
     }else {
@@ -21,8 +24,18 @@
     xmlhttp.onreadystatechange=function () {
         if(xmlhttp.readyState==4&&xmlhttp.status==200){
             console.log(xmlhttp.responseText);
+            let json=JSON.parse(xmlhttp.responseText);
+            for(let key in json){
+                if(json.hasOwnProperty(key)){
+                    oH3.innerHTML+=key;
+                };
+            }
+            for(let item of json.name){
+                oUl.innerHTML+=`<li>${item.title}</li>`;
+            }
         }
     }
+
 </script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+</head>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+     //function* helloGenerator() {
+    //        yield "hello";
+    //        yield "world";
+    //        return "end";
+    //    }
+    //    let hg=helloGenerator();
+    //    console.log(hg);
+    //    console.log(hg.next());//{value: "hello", done: false}
+    //    console.log(hg.next());//{value: "world", done: false}
+    //    console.log(hg.next());//{value: "end", done: true}
+    
+     function request(url) {
+            $.get(url,function (res) {
+                sg.next(res);
+            },"json")
+     }
+     function* stuGen() {
+         console.log(yield  request("a.json"));
+         console.log(yield  request("b.json"));
+         console.log(yield  request("c.json"));
+     }
+     let sg=stuGen();
+     sg.next();
+</script>   
+</body>
+</html>
