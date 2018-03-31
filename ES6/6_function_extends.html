@@ -85,6 +85,12 @@
         /*
         *  如果函数内部使用了扩展运算符，默认值的参数，解构赋值，函数内部就不能使用严格模式
         * */
+
+        let fun= (a) =>{
+            console.log(a*a);//25
+            console.log(this);//window
+        }
+        fun(5);
 </script>
 </body>
 </html>
