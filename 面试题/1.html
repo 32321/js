@@ -14,6 +14,25 @@
     }
     var bar=new new foo;
     console.log(bar.x);//undefined
+
+//    作者：IMarinette
+// 链接：https://www.nowcoder.com/discuss/71367
+// 来源：牛客网
+
+    function test(){
+        var a=1, b=2;
+        setTimeout(function(){
+             alert(a);
+             a = 3;
+        },1000);
+        a = 2;
+        setTimeout(function(){
+            alert(a);
+            a = 4;
+        },3000);
+    }
+    test();
+    alert(0);    //    0   2   3
 </script>
 </body>
 </html>
